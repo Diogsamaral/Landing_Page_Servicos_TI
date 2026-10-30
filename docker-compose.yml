@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: landing_page_db
+    environment:
+      POSTGRES_DB: landingpage_db
+      POSTGRES_USER: landing_user
+      POSTGRES_PASSWORD: landing_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: landing_page_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=sua-chave-secreta-aqui
+      - DEBUG=1
+      - DB_NAME=landingpage_db
+      - DB_USER=landing_user
+      - DB_PASSWORD=landing_password
+      - DB_HOST=db
+      - DB_PORT=5432
+      # Configurações de E-mail (SMTP)
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=587
+      - EMAIL_HOST_USER=seu-email@gmail.com
+      - EMAIL_HOST_PASSWORD=sua-senha-de-app-ou-token
+      - EMAIL_RECEIVER=seu-email-onde-recebe-notificacao@empresa.com
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

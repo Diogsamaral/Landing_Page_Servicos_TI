@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soluções em Dados, IA e Gestão Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0B0F17',
+              card: '#151C2C',
+              border: '#1E293B',
+              accent: '#38BDF8',
+              purple: '#6366F1'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- Header / Navbar -->
+  <header class="border-b border-slate-800 bg-[#0B0F17]/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white">
+          <i class="fa-solid fa-code-branch text-sm"></i>
+        </div>
+        <span class="font-bold text-lg tracking-wider text-white">TECH<span class="text-sky-400">STACK</span></span>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm text-slate-400 font-medium">
+        <a href="#servicos" class="hover:text-sky-400 transition">Serviços</a>
+        <a href="#arquitetura" class="hover:text-sky-400 transition">Arquitetura</a>
+        <a href="#contato" class="hover:text-sky-400 transition">Contato</a>
+      </nav>
+      <a href="#contato" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition">
+        Falar com Especialista
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-20 px-6 max-w-7xl mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 mb-6">
+        <i class="fa-solid fa-bolt"></i> Engenharia & Inteligência B2B
+      </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
+        Estruturamos seus dados, criamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">Agentes de IA</span> e sistemas web seguros.
+      </h1>
+      <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+        Modernize sua infraestrutura com arquitetura de alta performance (.NET, Next.js, Python e Azure Databricks) sem estourar o orçamento de nuvem.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contato" class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold px-6 py-3.5 rounded-xl text-center transition shadow-lg shadow-sky-500/10">
+          Solicitar Diagnóstico
+        </a>
+        <a href="#servicos" class="border border-slate-800 bg-slate-900/50 hover:bg-slate-800/50 text-slate-300 font-semibold px-6 py-3.5 rounded-xl text-center transition">
+          Ver Soluções
+        </a>
+      </div>
+    </div>
+    
+    <!-- Visual Accent Box -->
+    <div class="bg-[#151C2C] border border-slate-800 p-6 rounded-2xl shadow-2xl relative">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+        <span class="text-xs text-slate-400 font-mono"><i class="fa-solid fa-server text-sky-400 mr-2"></i>Status do Ecossistema</span>
+        <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Ativo</span>
+      </div>
+      <div class="space-y-3 font-mono text-xs">
+        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800 flex justify-between">
+          <span class="text-slate-400">Core API (.NET 9)</span>
+          <span class="text-sky-400">200 OK (12ms)</span>
+        </div>
+        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800 flex justify-between">
+          <span class="text-slate-400">Agente MCP (Python/FastAPI)</span>
+          <span class="text-indigo-400">Pronto / Conectado</span>
+        </div>
+        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800 flex justify-between">
+          <span class="text-slate-400">Data Lake (Azure Medallion)</span>
+          <span class="text-emerald-400">Sincronizado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário de Contato -->
+  <section id="contato" class="py-16 px-6 max-w-3xl mx-auto">
+    <div class="bg-[#151C2C] border border-slate-800 rounded-2xl p-8 shadow-xl">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-white mb-2">Vamos conversar sobre seu projeto</h2>
+        <p class="text-slate-400 text-sm">Preencha o formulário abaixo para receber uma análise técnica inicial.</p>
+      </div>
+
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label for="name" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nome Completo *</label>
+          <input type="text" id="name" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm" placeholder="Seu nome" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">E-mail Corporativo *</label>
+            <input type="email" id="email" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm" placeholder="seuemail@empresa.com" />
+          </div>
+          <div>
+            <label for="company" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Empresa</label>
+            <input type="text" id="company" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm" placeholder="Nome da empresa" />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Telefone / WhatsApp</label>
+            <input type="tel" id="phone" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm" placeholder="(31) 99999-9999" />
+          </div>
+          <div>
+            <label for="service_interest" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Interesse Principal</label>
+            <select id="service_interest" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm">
+              <option value="Agentes de IA e MCP">Agentes de IA & MCP</option>
+              <option value="Engenharia de Dados (Azure/Medallion)">Engenharia de Dados (Azure/Medallion)</option>
+              <option value="Desenvolvimento Web (.NET / Next.js)">Desenvolvimento Web (.NET / Next.js)</option>
+              <option value="Otimização de Custos de Nuvem">Otimização de Custos de Nuvem</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Mensagem ou Detalhes do Projeto</label>
+          <textarea id="message" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-sky-500 transition text-sm" placeholder="Conte brevemente o objetivo do seu projeto..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold py-3.5 rounded-lg transition text-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+    <p>&copy; 2026 TechStack - Soluções em Engenharia de Dados & IA. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script principal importado dos estáticos do Django -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
